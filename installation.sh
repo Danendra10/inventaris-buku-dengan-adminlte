@@ -1,0 +1,1 @@
+php artisan adminlte:install && composer require laravel/ui && php artisan ui bootstrap --auth && php artisan adminlte:install --type=full && php artisan adminlte:plugins install
