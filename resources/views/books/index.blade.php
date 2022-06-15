@@ -11,12 +11,19 @@
                     <a href="{{route('books.create')}}" class="btn btn-primary mb-2">
                         Tambah
                     </a>
+                    <a href="/chart" class="btn btn-primary mb-2">
+                        Chart
+                    </a>
+                    <a href="/generate-pdf" class="btn btn-primary mb-2">
+                        Print PDF
+                    </a>
                     <table class="table table-hover table-bordered table-stripped" id="example2">
                         <thead>
                         <tr>
                             <th>No.</th>
                             <th>Nama</th>
                             <th>No</th>
+                            <th>Tipe</th>
                             <th>Opsi</th>
                         </tr>
                         </thead>
@@ -26,6 +33,7 @@
                                 <td>{{$key+1}}</td>
                                 <td>{{$bookss->name}}</td>
                                 <td>{{$bookss->no}}</td>
+                                <td>{{$bookss->booktype}}</td>
                                 <td>
                                     <a href="{{route('books.edit', $bookss)}}" class="btn btn-primary btn-xs">
                                         Edit

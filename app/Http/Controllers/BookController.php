@@ -22,10 +22,11 @@ class BookController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'no' => 'required'
+            'no' => 'required',
+            'booktype' => 'required'
         ]);
         $array = $request->only([
-            'name', 'no'
+            'name', 'no', 'booktype'
         ]);
         $books = books::create($array);
         return redirect()->route('books.index')
@@ -54,7 +55,7 @@ class BookController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'required' . $id,
+            'no' => 'required' . $id,
         ]);
         $books = books::find($id);
         $books->name = $request->name;

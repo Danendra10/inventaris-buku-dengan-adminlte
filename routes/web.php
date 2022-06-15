@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\ChartJSController;
+use App\Http\Controllers\PDFController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,6 +17,12 @@ use Illuminate\Support\Facades\Auth;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//for the pdf
+Route::get('chart', [ChartJSController::class, 'index']);
+Route::get('generate-pdf', [PDFController::class, 'generatePDF']);
+
+//for the chart
+// Route::get('chart', [ChartController::class, "index"]);
 
 Route::resource('users', \App\Http\Controllers\UserController::class)
     ->middleware('auth');
